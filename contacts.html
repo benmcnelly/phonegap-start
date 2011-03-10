@@ -17,7 +17,7 @@
     function onDeviceReady() {
         // find all contacts with 'Bob' in any name field
         var options = new ContactFindOptions();
-        options.filter="Bob"; 
+        options.filter="David"; 
         var fields = ["displayName", "name"];
         navigator.service.contacts.find(fields, onSuccess, onError, options);
     }
