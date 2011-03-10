@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Drink Sent</title> 
+	<link rel="stylesheet" href="css/jquery.mobile-1.0a3.min.css" />
+	<link rel="stylesheet" href="css/custom.css" />
+	<script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>	
+	<script type="text/javascript" src="js/jquery.mobile-1.0a3.min.js"></script>
+	
+<style type="text/css">
+html,body {  font-family:Georgia, "Times New Roman", Times, serif; color:#666666;}
+
+.box-claim { text-align:center; background:url(bocx-bg.jpg) repeat-x #fff; padding:5px; width:90%;  margin: 10px auto; moz-box-shadow: 0px 0px 10px #999; -webkit-box-shadow:  0px 0px 10px #999; -moz-border-radius: 15px;  -webkit-border-radius: 15px; border:thick dashed #333;}
+.who { font-size:40px; padding:15px;}
+.where { font-size:18px;}
+.details { font-size:18px;}
+.what {padding:20px;}
+.claim { padding:5px;}
+.disclaimer { font-size:11px; width:60%; text-align:center; margin:auto;}
+#send { text-align:center; padding:25px; }
+.logo { width:82px; height:82px; margin:20px auto; }
+.expires { width:100px; background:#333; color:#fff; padding:12px; margin:5px auto;}
+</style>
+
+</head>
+<body> 
+
+<div data-role="page">
+
+<div id="top-header">
+	<a href="index.html"><img class="header-logo" src="images/left-header.png" /></a>
+	<img style="float:right;" src="images/temp-right-header.png" />
+</div>
+
+<div data-role="header" data-theme="b" >
+	<div data-role="navbar" class="nav-glyphish ui-navbar">
+		<ul>
+			<li><a class="ui-btn ui-btn-up-a ui-btn-icon-top" data-theme="a" href="index.html" id="places" data-icon="custom">Places<span class="ui-icon ui-icon-custom"></span></a></li>
+			<li><a class="ui-btn ui-btn-up-a ui-btn-icon-top" data-theme="a" href="drinks.html" id="beer" data-icon="custom">Drinks<span class="ui-icon ui-icon-custom"></span></a></li>
+			<li><a class="ui-btn ui-btn-up-a ui-btn-icon-top" data-theme="a" href="gifts.html" id="gift" data-icon="custom">Gifts<span class="ui-icon ui-icon-custom"></span></a></li>
+			<li><a class="ui-btn ui-btn-up-a ui-btn-icon-top" data-theme="a" href="friends.html" id="person" data-icon="custom">Friends<span class="ui-icon ui-icon-custom"></span></a></li>
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /header -->
+
+
+<div role="banner"  data-role="header" data-position="inline" data-theme="d">
+<a href="view-gift.html" data-direction="reverse">Back</a>
+	<h1 role="heading" class="ui-title">VIP Drink Claimed</h1>
+</div>
+
+<div data-role="content">    
+
+<div class="box-claim">
+	<div class="who">Congrats!</div> 
+	<div class="where">Your drink was sent!</div>
+</div>
+
+<div class="logo"><img src="logo.png" /></div>
+
+</div>
+</body>
+</html>
