@@ -1,63 +1,70 @@
-<!doctype html>
-<html>
-	<head>
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
-		<title>BEN SUCKS</title>
-		<link rel="stylesheet" href="assets/css/master.css" type="text/css" media="screen" />
-		
-		<script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/xui.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/lawnchair/adaptors/LawnchairAdaptorHelpers.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/lawnchair/adaptors/DOMStorageAdaptor.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/lawnchair/adaptors/WebkitSQLiteAdaptor.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/lawnchair/Lawnchair.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/dsl.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
-		
-	</head>
-	<body>
- 		<div id="title_bar">Phone<strong>Gap</strong> Training App</div>
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Places</title> 
+	<link rel="stylesheet" href="css/jquery.mobile-1.0a3.min.css" />
+	<link rel="stylesheet" href="css/custom.css" />
+	<script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>	
+	<script type="text/javascript" src="js/jquery.mobile-1.0a3.min.js"></script>
+</head>
+<body>
 
-		<div id="welcome" class="view">
-		  <div class="app_button" id="map_button">Show My Location</div>
-  	      <div class="app_button" id="settings_button">Settings</div>
-		</div>
+<div data-role="page">
 
-		<div id="map" class="view">
-		  <div class="map_image">
-              <img id="static_map" src="assets/img/staticmap.png">
-		  </div>
-		  <p>This is where you are</p>
-		  <div class="app_button" id="welcome_button">Go Back</div>
-		</div>
+<div id="top-header">
+	<a href="index.html"><img class="header-logo" src="images/left-header.png" /></a>
+	<img style="float:right;" src="images/temp-right-header.png" />
+</div>
 
-		<div id="settings" class="view">
-		  <form id="settings_form">
-		    <fieldset>
-		      <legend>Map Type</legend>
-			  <input type="radio" name="map" value="roadmap" checked>Road Map<br/>
-		      <input type="radio" name="map" value="satellite">Satellite<br/>
-		      <input type="radio" name="map" value="terrain">Terrain<br/>
-		      <input type="radio" name="map" value="hybrid">Hybrid<br/>
-		    </fieldset>
-		    <fieldset>
-		      <legend>Zoom Level</legend>
-  		      <input type="radio" name="zoom" value="10">Super Far<br/>
-  		      <input type="radio" name="zoom" value="12">Far<br/>
-  		      <input type="radio" name="zoom" value="15" checked>Normal<br/>
-  		      <input type="radio" name="zoom" value="18">Close<br/>
-  		      <input type="radio" name="zoom" value="20">Super Close<br/>
-  		     </fieldset>
-		      <button id="save_button">Save</button>
-	      </form>
-		</div>
+<div data-role="header" data-theme="b" >
+	<div data-role="navbar" class="nav-glyphish ui-navbar">
+		<ul>
+			<li><a class="ui-btn ui-btn-up-a ui-btn-icon-top" data-theme="a" href="index.html" id="places" data-icon="custom">Places<span class="ui-icon ui-icon-custom"></span></a></li>
+			<li><a class="ui-btn ui-btn-up-a ui-btn-icon-top" data-theme="a" href="drinks.html" id="beer" data-icon="custom">Drinks<span class="ui-icon ui-icon-custom"></span></a></li>
+			<li><a class="ui-btn ui-btn-up-a ui-btn-icon-top" data-theme="a" href="friends.html" id="person" data-icon="custom">Friends<span class="ui-icon ui-icon-custom"></span></a></li>
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /header -->
 
-	</body>
+
+<div role="banner"  data-role="header" data-position="inline" data-theme="d">
+	<h1 role="heading" class="ui-title">Places</h1>
+</div>
+
+<div data-role="content">
+	
+	<ul data-role="listview" data-filter="true">
+		<li data-role="list-divider">Missouri</li>
+		<li>
+			<img src="images/100_map_icon.jpg.png" />
+			<h3><a href="index.html">Joplin, MO</a></h3>
+		</li>
+		<li>
+			<img src="images/100_map_icon.jpg.png" />
+			<h3><a href="index.html">Springfield, MO</a></h3>
+		</li>
+		<li>
+			<img src="images/100_map_icon.jpg.png" />
+			<h3><a href="index.html">Kansas City, MO</a></h3>
+		</li>    
+		<li data-role="list-divider">Kansas</li>
+        <li>
+			<img src="images/100_map_icon.jpg.png" />
+			<h3><a href="index.html">Wichita City, KS</a></h3>
+		</li>
+		<li data-role="list-divider">Oklahoma</li>
+        <li>
+			<img src="images/100_map_icon.jpg.png" />
+			<h3><a href="index.html">Tulsa, OK</a></h3>
+		</li>                                       
+	</ul>
+
+
+</div><!-- /content -->
+<div class="logo"><img src="logo.png" /></div>
+</div><!-- /page -->
+
+</body>
+
 </html>
