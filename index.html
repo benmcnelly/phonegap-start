@@ -1,65 +1,162 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-	<title>Places</title> 
-	<link rel="stylesheet" href="css/jquery.mobile-1.0a3.min.css" />
-	<link rel="stylesheet" href="css/custom.css" />
-	<script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
-	<script type="text/javascript" src="js/custom.js"></script>		
-	<script type="text/javascript" src="js/jquery.mobile-1.0a3.min.js"></script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+<title>Fixed nav layout test</title>
+
+<link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" /> 
+<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script> 
+<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script> 
+
+<style type="text/css">
+
+html, body { height:100%; padding:0; margin:0; background:url(images/bg.jpg) top left no-repeat #000; }
+
+#buttons { margin:5px; width:184px; height:50px; float:right; background:url(images/buttons.png) top left no-repeat;}
+	#places { float:right; width:50px; height:50px; margin:0 5px 0 5px;}
+	#drinks { float:right; width:50px; height:50px; margin:0 5px 0 5px;}
+	#profile { float:right; width:50px; height:50px;  margin:0 5px 0 5px;}
+
+#nav{
+  position:fixed;
+  z-index: 2000;
+  top:0; left:0;
+  width:100%;
+  min-width:300px;
+  height:60px;
+  background: url(images/menuloop.png) #000;
+}
+
+#page { margin-top:60px; }
+
+</style>
+
+
+
 </head>
+
 <body>
-
-<div data-role="page">
-
-<div id="top-header">
-	<a href="index.html"><img class="header-logo" src="images/left-header.png" /></a>
-	<img style="float:right;" src="images/temp-right-header.png" />
+<div id="nav">
+    <a href="#welcome"><img style="float:left; margin:5px;" src="images/logo.png" /></a>
+    <div id="buttons">
+        <a href="#places"><div id="places"></div></a>
+        <a href="#drinks"><div id="drinks"></div></a>
+        <a href="#profile"><div id="profile"></div></a>
+    </div>
 </div>
 
-<div data-role="header" data-theme="b" >
-	<div data-role="navbar" class="nav-glyphish ui-navbar">
-		<ul>
-			<li><a class="ui-btn ui-btn-up-a ui-btn-icon-top" data-theme="a" href="index.html" id="places" data-icon="custom">Places<span class="ui-icon ui-icon-custom"></span></a></li>
-			<li><a class="ui-btn ui-btn-up-a ui-btn-icon-top" data-theme="a" href="drinks.html" id="beer" data-icon="custom">Drinks<span class="ui-icon ui-icon-custom"></span></a></li>
-			<li><a class="ui-btn ui-btn-up-a ui-btn-icon-top" data-theme="a" href="friends.html" id="person" data-icon="custom">Friends<span class="ui-icon ui-icon-custom"></span></a></li>
-		</ul>
-	</div><!-- /navbar -->
-</div><!-- /header -->
 
+<div id="page" data-role="page"  data-theme="a"> 
+ 
+<div data-role="header" > 
+ 
+<h1>Find a Place</h1> 
+ 
+</div><!-- /header --> 
+ 
+<div data-role="content"><div class="content-primary"> 
+ 
+<ul data-role="listview" data-filter="true" data-filter-placeholder="Search VIP Places..." data-filter-theme="a" data-theme="a" data-divider-theme="a"> 
+ 
+  <li data-role="list-divider" data-theme="f" > 
+    Georgia
+  </li> 
+  
+    <li><a href="/places/by_region/509/"> 
+    <img src="http://picreate.com/app/images/100_map_icon.jpg.png" /> 
+    <h3>Atlanta</h3> 
+    </a></li> 
+  
+ 
+  <li data-role="list-divider" data-theme="f" > 
+    Alaska
+  </li> 
+  
+    <li><a href="/places/by_region/427/"> 
+    <img src="http://picreate.com/app/images/100_map_icon.jpg.png" /> 
+    <h3>Fairbanks</h3> 
+    </a></li> 
+  
+ 
+  <li data-role="list-divider" data-theme="f" > 
+    Minnesota
+  </li> 
+  
+    <li><a href="/places/by_region/607/"> 
+    <img src="http://picreate.com/app/images/100_map_icon.jpg.png" /> 
+    <h3>Bemidji</h3> 
+    </a></li> 
+  
+ 
+  <li data-role="list-divider" data-theme="f" > 
+    Missouri
+  </li> 
+  
+    <li><a href="/places/by_region/532/"> 
+    <img src="http://picreate.com/app/images/100_map_icon.jpg.png" /> 
+    <h3>Springfield </h3> 
+    </a></li> 
+  
+    <li><a href="/places/by_region/623/"> 
+    <img src="http://picreate.com/app/images/100_map_icon.jpg.png" /> 
+    <h3>Kansas City</h3> 
+    </a></li> 
+  
+    <li><a href="/places/by_region/622/"> 
+    <img src="http://picreate.com/app/images/100_map_icon.jpg.png" /> 
+    <h3>Joplin</h3> 
+    </a></li> 
+  
+ 
+  <li data-role="list-divider" data-theme="f" > 
+    Arizona
+  </li> 
+  
+    <li><a href="/places/by_region/430/"> 
+    <img src="http://picreate.com/app/images/100_map_icon.jpg.png" /> 
+    <h3>Flagstaff / Sedona</h3> 
+    </a></li> 
+  
+    <li><a href="/places/by_region/432/"> 
+    <img src="http://picreate.com/app/images/100_map_icon.jpg.png" /> 
+    <h3>Phoenix</h3> 
+    </a></li> 
+  
+ 
+  <li data-role="list-divider" data-theme="f" > 
+    Illinois
+  </li> 
+  
+    <li><a href="/places/by_region/523/"> 
+    <img src="http://picreate.com/app/images/100_map_icon.jpg.png" /> 
+    <h3>Bloomington-Normal</h3> 
+    </a></li> 
+  
+ 
+  <li data-role="list-divider" data-theme="f" > 
+    Alabama
+  </li> 
+  
+    <li><a href="/places/by_region/418/"> 
+    <img src="http://picreate.com/app/images/100_map_icon.jpg.png" /> 
+    <h3>Birmingham</h3> 
+    </a></li> 
+  
+    <li><a href="/places/by_region/417/"> 
+    <img src="http://picreate.com/app/images/100_map_icon.jpg.png" /> 
+    <h3>Auburn</h3> 
+    </a></li> 
+  
+ 
+</ul>
 
-<div role="banner"  data-role="header" data-position="inline" data-theme="d">
-	<h1 role="heading" class="ui-title">These Are Tests</h1>
-</div>
-
-<div data-role="content">
-	
-	<ul data-role="listview" data-filter="true">
-		<li data-role="list-divider">External Links</li>
-		<li>
-			<img src="images/100_map_icon.jpg.png" />
-			<h3><a href="http://google.com">Google Website</a></h3>
-		</li>
-		<li>
-			<img src="images/100_map_icon.jpg.png" />
-			<h3><a rel=external href="http://google.com">Google Website w/rel=ext</a></h3>
-		</li>
-		<li data-role="list-divider">Internal Links</li>
-        <li>
-			<img src="images/100_map_icon.jpg.png" />
-			<h3><a rel=external href="contacts.html">Contacts API FAIL</a></h3>
-		</li>
-        <li>
-			<img src="images/100_map_icon.jpg.png" />
-			<h3><a rel=external href="maps.html">Maps Test API</a></h3>
-		</li>                                     
-	</ul>
-
-
-</div><!-- /content -->
-<div class="logo"><img src="logo.png" /></div>
-</div><!-- /page -->
+<br /><br /><br />
+		
+</div></div><!-- /content -->   
+</div><!-- /page --> 
 
 </body>
+
 
 </html>
