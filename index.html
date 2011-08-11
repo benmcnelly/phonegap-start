@@ -52,7 +52,7 @@
 	<body>
 		<section>
 			<nav>
-
+                <div id="main"> </div>
 			</nav>
 		</section>
        
@@ -69,13 +69,12 @@
 
 <script>
     $(document).ready(function() {
+    $("#main").load("http://benmcnelly.com/data/");
         if (!!('ontouchstart' in window)) {
             $('nav').touchScroll();
-            $("#results").load("http://benmcnelly.com/data/");
         }
     });
 </script>
-
 
 
 
