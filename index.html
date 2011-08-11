@@ -1,134 +1,83 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
-<title>test</title>
-<link href='http://fonts.googleapis.com/css?family=Marvel' rel='stylesheet' type='text/css'>
-
-<style type="text/css">
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  vertical-align:baseline;
-  background:transparent;
-}
-
-
-#main {overflow:auto;
-	padding-bottom: 60px;}  /* must be same height as the footer */
-
-
-
-html, body { height:100%; font-family: 'Marvel', sans-serif; height:100%; padding:0; margin:0; background:url(images/bg.jpg) top left no-repeat #000; }
-
-    body {
-        overflow-y: hidden;
-    }
-
-#push {min-height:100%; }
-
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<title>touchScroll jQuery plugin 'fixed footer' example</title>
+		<style>
+			body {
+				overflow-y: hidden; background:url(images/bg.jpg) top left no-repeat #000; font-family: 'Marvel', sans-serif;
+			}
+			
+			
+			section {
+				display: block;
+				position: fixed;
+				left: 0;
+				top: 0;
+				bottom: 50px;
+				right: 0;
+				overflow-y: auto;
+			}
+			
+			nav {
+				display: block;
+				height: 100%;
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+			}
+			
+			footer {
+				display: block;
+				position: fixed;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				height: 60px;
+				overflow: hidden;
+                background: url(images/menuloop.png) #000;
+                min-width:300px;
+			}
+			
 #buttons { margin:5px; width:184px; height:50px; float:right; background:url(images/buttons.png) top left no-repeat;}
 	#places { float:right; width:50px; height:50px; margin:0 5px 0 5px;}
 	#drinks { float:right; width:50px; height:50px; margin:0 5px 0 5px;}
 	#profile { float:right; width:50px; height:50px;  margin:0 5px 0 5px;}
     #welcome img { float:left; margin:5px; }
+    
+    
+.list-div { font-size:25px; margin:15px;  padding:15px; color:#fff; background:#06C; -moz-box-shadow: 0px 0px 10px #000; -webkit-box-shadow:  0px 0px 10px #000; }            
+		</style>
+	</head>
+	<body>
+		<section>
+			<nav>
 
-#navigation{
-    display: block;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width:100%;
-    min-width:300px;
-    height:60px;
-    background: url(images/menuloop.png) #000;
-    overflow: hidden;
-}
-
-section {
-    display: block;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 50px;
-    right: 0;
-    background-color: #ddd;
-    overflow-y: auto;
-}
-
-main {
-    display: block;
-    height: 100%;
-    -webkit-perspective: 1000;
-    -webkit-backface-visibility: hidden;
-}
-
-.list-div { font-size:25px; margin:15px;  padding:15px; color:#fff; background:#06C; -moz-box-shadow: 0px 0px 10px #000; -webkit-box-shadow:  0px 0px 10px #000; } 
-
-</style>
-
-
-
-</head>
-
-<body>
-<div id="push">
-
-<div id="main">
-Loading...
-</div>
-
-<script>
-$(document).ready(function(){
-	$("#main").load("http://benmcnelly.com/data/");
-});
-</script>  
-
-</div>
-
-<div id="navigation">
-    <a id="welcome" href="index.html"><img src="images/logo.png" /></a>
+			</nav>
+		</section>
+       
+		<footer>
+<a id="welcome" href="#"><img src="images/logo.png" /></a>
     <div id="buttons">
         <a href="test2.html"><div id="places"></div></a>
         <a href="#drinks"><div id="drinks"></div></a>
         <a href="#profile"><div id="profile"></div></a>
     </div>
-</div>
+		</footer>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+		<script src="https://github.com/neave/touch-scroll/raw/master/touch-scroll.min.js"></script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
-<script src="https://github.com/neave/touch-scroll/raw/master/touch-scroll.min.js"></script>
 <script>
     $(document).ready(function() {
         if (!!('ontouchstart' in window)) {
-            $('main').touchScroll();
+            $('nav').touchScroll();
+            $("#results").load("http://benmcnelly.com/data/");
         }
     });
 </script>
 
 
-<script>
-$(document).ready(function(){
-    $("#main").load("http://benmcnelly.com/data/");	
-});
-</script> 
-
-</body>
 
 
+	</body>
 </html>
