@@ -36,6 +36,10 @@ time, mark, audio, video {
 
 html, body { height:100%; font-family: 'Marvel', sans-serif; height:100%; padding:0; margin:0; background:url(images/bg.jpg) top left no-repeat #000; }
 
+    body {
+        overflow-y: hidden;
+    }
+
 #push {min-height:100%; }
 
 #buttons { margin:5px; width:184px; height:50px; float:right; background:url(images/buttons.png) top left no-repeat;}
@@ -44,17 +48,37 @@ html, body { height:100%; font-family: 'Marvel', sans-serif; height:100%; paddin
 	#profile { float:right; width:50px; height:50px;  margin:0 5px 0 5px;}
     #welcome img { float:left; margin:5px; }
 
-#nav{
-  position:fixed;
-  bottom:0px; left:0px;
-  width:100%;
-  min-width:300px;
-  height:60px;
-  background: url(images/menuloop.png) #000;
-  clear:both;
+#navigation{
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width:100%;
+    min-width:300px;
+    height:60px;
+    background: url(images/menuloop.png) #000;
+    overflow: hidden;
 }
 
-.list-div { font-size:25px; margin:15px;  padding:15px; color:#fff; background:#06C; -moz-box-shadow: 0px 0px 10px #000; -webkit-box-shadow:  0px 0px 10px #000; } 
+section {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 50px;
+    right: 0;
+    background-color: #ddd;
+    overflow-y: auto;
+}
+
+main {
+    display: block;
+    height: 100%;
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+}
+
 .list-div { font-size:25px; margin:15px;  padding:15px; color:#fff; background:#06C; -moz-box-shadow: 0px 0px 10px #000; -webkit-box-shadow:  0px 0px 10px #000; } 
 
 </style>
@@ -67,41 +91,42 @@ html, body { height:100%; font-family: 'Marvel', sans-serif; height:100%; paddin
 <div id="push">
 
 <div id="main">
-<a href="contact.html"><div class="list-div">This Is contact...</div></a>
-<a href="test.html"><div class="list-div">This Is another page...</div></a>
-<a href="test2.html"><div class="list-div">This Is yet another page...</div></a>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-<div class="list-div">This Is something...</div>
-</div> 
+Loading...
+</div>
+
+<script>
+$(document).ready(function(){
+	$("#main").load("http://benmcnelly.com/data/");
+});
+</script>  
 
 </div>
 
-<div id="nav">
-    <a id="welcome" href="#welcome"><img src="images/logo.png" /></a>
+<div id="navigation">
+    <a id="welcome" href="index.html"><img src="images/logo.png" /></a>
     <div id="buttons">
-        <a href="#places"><div id="places"></div></a>
+        <a href="test2.html"><div id="places"></div></a>
         <a href="#drinks"><div id="drinks"></div></a>
         <a href="#profile"><div id="profile"></div></a>
     </div>
 </div>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script src="https://github.com/neave/touch-scroll/raw/master/touch-scroll.min.js"></script>
+<script>
+    $(document).ready(function() {
+        if (!!('ontouchstart' in window)) {
+            $('main').touchScroll();
+        }
+    });
+</script>
+
+
+<script>
+$(document).ready(function(){
+    $("#main").load("http://benmcnelly.com/data/");	
+});
+</script> 
 
 </body>
 
